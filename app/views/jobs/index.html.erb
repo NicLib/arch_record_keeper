@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Person type</th>
+      <th>Research use</th>
+      <th>Time spent</th>
+      <th>AU/CHOG</th>
+      <th>Complete</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.name %></td>
+        <td><%= job.street_address %></td>
+        <td><%= job.city %></td>
+        <td><%= job.state %></td>
+        <td><%= job.zip %></td>
+        <td><%= job.telephone %></td>
+        <td><%= job.email %></td>
+        <td><%= job.subject %></td>
+        <td><%= job.person_type %></td>
+        <td><%= job.research_use %></td>
+        <td><%= job.time_spend %></td>
+        <td><%= job.au_chog %></td>
+        <td><%= job.complete %></td>
+        <td><%= job.notes %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>
