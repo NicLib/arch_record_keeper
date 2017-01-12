@@ -15,6 +15,7 @@
       <th>Subject</th>
       <th>Person type</th>
       <th>Research use</th>
+      <th>Date Started</th>
       <th>Time spent</th>
       <th>AU/CHOG</th>
       <th>Complete</th>
@@ -36,6 +37,7 @@
         <td><%= job.subject %></td>
         <td><%= job.person_type %></td>
         <td><%= job.research_use %></td>
+        <td><%= job.date_started.strftime('%m/%d/%Y') %></td>
         <td><%= job.time_spend %></td>
         <td><%= job.au_chog %></td>
         <td><%= job.complete %></td>
