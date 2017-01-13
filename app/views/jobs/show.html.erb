@@ -51,12 +51,17 @@
 </p>
 
 <p>
-  <strong>Time spend:</strong>
+	<strong>Date Started:</strong>
+	<%= @job.date_started.strftime('%m/%d/%Y') %>
+</p>
+
+<p>
+  <strong>Time spent:</strong>
   <%= @job.time_spend %>
 </p>
 
 <p>
-  <strong>Au chog:</strong>
+  <strong>AU or CHOG:</strong>
   <%= @job.au_chog %>
 </p>
 

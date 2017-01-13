@@ -60,6 +60,15 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def totals
+    @jobs = Job.all
+    @total_hours = Job.sum(:time_spend)
+    @au_jobs = Job.where(au_chog: 'AU')
+    @chog_jobs = Job.where(au_chog: 'CHOG')
+    @total_au = Job.where(au_chog: 'AU').sum(:time_spend)
+    @total_chog = Job.where(au_chog: 'CHOG').sum(:time_spend)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
