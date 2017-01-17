@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   
   root 'jobs#index'
   
-  get "/app/views/jobs/totals.html.erb", to: "jobs#totals", as: "totals"
+  get "job/totals", to: "jobs#totals", as: "totals"
 end

@@ -1,6 +1,6 @@
 <h1>Totals</h1>
 
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Back', root_path %>
 
 <table>
 	<tr>
@@ -31,6 +31,8 @@
 		<td><%= @total_chog %></td>
 	</tr>
 </table>
+
+
 
 <h3>Total Jobs</h3>
 <%= pie_chart Job.group(:au_chog).count,  donut: true %>
