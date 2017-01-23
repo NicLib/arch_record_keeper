@@ -2,6 +2,14 @@
 
 <%= link_to 'Back', root_path %>
 
+<%= form_tag(totals_path ,:method => 'get', id: 'date_range')  do  %>
+	<%= label :start_date, "Start: " %>
+	<%= date_field_tag :start_date, params[:search], placeholder: 'Start Date', id: 'start_date' %>
+	<%= label :end_date, "End: "%>
+	<%= date_field_tag :end_date, params[:search], placeholder: 'End Date', id: 'end_date'%>
+	<%= submit_tag 'Search', :name => nil %>
+<% end %>
+
 <table>
 	<tr>
 		<td><strong>Total Jobs:</strong></td>
@@ -35,8 +43,8 @@
 
 
 <h3>Total Jobs</h3>
-<%= pie_chart Job.group(:au_chog).count,  donut: true %>
+<%= pie_chart Job.search(:start_date, :end_date).group(:au_chog).count,  donut: true %>
 
 
 <h3>Total Hours</h3>
-<%= pie_chart Job.group(:au_chog).sum(:time_spend), donut: true %>
+<%= pie_chart Job.search(:start_date, :end_date).group(:au_chog).sum(:time_spend), donut: true %>
