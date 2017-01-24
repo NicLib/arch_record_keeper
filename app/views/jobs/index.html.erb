@@ -11,7 +11,8 @@
 <table>
   <thead>
     <tr>
-      <th><%= sortable 'name' %></th>
+      <th><%= sortable 'last_name', 'Last Name' %></th>
+      <th><%= sortable 'first_name', 'First Name' %></th>
       <th><%= sortable 'subject' %></th>
       <th><%= sortable 'person_type', 'Person Type' %></th>
       <th><%= sortable 'research_use', 'Research Use' %></th>
@@ -24,7 +25,8 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.name %></td>
+        <td><%= job.last_name %></td>
+        <td><%= job.first_name %></td>
         <td><%= job.subject %></td>
         <td><%= job.person_type %></td>
         <td><%= job.research_use %></td>

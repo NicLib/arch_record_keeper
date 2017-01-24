@@ -7,7 +7,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     #Code for sorting columns found: http://railscasts.com/episodes/228-sortable-table-columns
-    @jobs = Job.order(sort_column + ' ' + sort_direction)
+    @jobs = Job.all.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /jobs/1
@@ -82,11 +82,11 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:name, :street_address, :city, :state, :zip, :telephone, :email, :subject, :person_type, :research_use, :time_spend, :au_chog, :complete, :notes, :start_date, :end_date)
+      params.require(:job).permit(:first_name, :last_name, :street_address, :city, :state, :zip, :country, :telephone, :email, :subject, :person_type, :research_use, :time_spend, :au_chog, :complete, :notes, :start_date, :end_date)
     end
     
     def sort_column
-      Job.column_names.include?(params[:sort]) ? params[:sort] : 'name'
+      Job.column_names.include?(params[:sort]) ? params[:sort] : 'last_name'
     end
     
     def sort_direction

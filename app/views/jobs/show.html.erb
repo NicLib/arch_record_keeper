@@ -2,27 +2,14 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @job.name %>
+  <%= @job.first_name %> <%= @job.last_name%>
 </p>
 
 <p>
-  <strong>Street address:</strong>
-  <%= @job.street_address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @job.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @job.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @job.zip %>
+	<strong>Street address:</strong><br/>
+	<%= @job.street_address %><br/>
+	<%= @job.city %>, <%= @job.state %><br />
+	<%= @job.country %> <%= @job.zip %>
 </p>
 
 <p>
