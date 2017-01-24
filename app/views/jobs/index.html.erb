@@ -11,12 +11,12 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Subject</th>
-      <th>Person type</th>
-      <th>Research use</th>
-      <th>Date Started</th>
-      <th>Complete</th>
+      <th><%= sortable 'name' %></th>
+      <th><%= sortable 'subject' %></th>
+      <th><%= sortable 'person_type', 'Person Type' %></th>
+      <th><%= sortable 'research_use', 'Research Use' %></th>
+      <th><%= sortable 'start_date', 'Date Started' %></th>
+      <th><%= sortable 'complete' %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
