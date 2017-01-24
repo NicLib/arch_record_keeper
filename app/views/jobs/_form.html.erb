@@ -62,10 +62,15 @@
   </div>
   
   <div class="field">
-  	<%= f.label :date_started %>
-  	<%= f.date_select :date_started %>
+  	<%= f.label :start_date, 'Date Started' %>
+  	<%= f.date_select :start_date %>
   </div>
 
+  <div class="field">
+  	<%= f.label :end_date, 'Date Last Worked On' %>
+  	<%= f.date_select :end_date %>
+  </div>
+  
   <div class="field">
     <%= f.label :time_spend, 'Time Spent' %>
     <%= f.text_field :time_spend %>

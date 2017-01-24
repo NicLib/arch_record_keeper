@@ -52,7 +52,12 @@
 
 <p>
 	<strong>Date Started:</strong>
-	<%= @job.date_started.strftime('%m/%d/%Y') %>
+	<%= @job.start_date %>
+</p>
+
+<p>
+	<strong>Date Last Worked On:</strong>
+	<%= @job.end_date %>
 </p>
 
 <p>

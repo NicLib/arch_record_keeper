@@ -62,12 +62,13 @@ class JobsController < ApplicationController
   end
   
   def totals
-    @jobs = Job.search(:start_date, :end_date).all
-    @total_hours = Job.search(:start_date, :end_date).sum(:time_spend)
-    @au_jobs = Job.search(:start_date, :end_date).where(au_chog: 'AU')
-    @chog_jobs = Job.search(:start_date, :end_date).where(au_chog: 'CHOG')
-    @total_au = Job.search(:start_date, :end_date).where(au_chog: 'AU').sum(:time_spend)
-    @total_chog = Job.search(:start_date, :end_date).where(au_chog: 'CHOG').sum(:time_spend)
+    @end_time = Time.now
+    @begin_time = @end_time - 1.year
+    @jobs = Job.all
+    @au_jobs = Job.where(au_chog: 'AU')
+    @chog_jobs = Job.where(au_chog: 'CHOG')
+    @total_au = Job.where(au_chog: 'AU')
+    @total_chog = Job.where(au_chog: 'CHOG')
   end
 
   private
@@ -78,6 +79,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:name, :street_address, :city, :state, :zip, :telephone, :email, :subject, :person_type, :research_use, :time_spend, :au_chog, :complete, :notes, :date_started)
+      params.require(:job).permit(:name, :street_address, :city, :state, :zip, :telephone, :email, :subject, :person_type, :research_use, :time_spend, :au_chog, :complete, :notes, :start_date, :end_date)
     end
 end

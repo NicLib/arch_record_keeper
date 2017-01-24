@@ -28,7 +28,7 @@
         <td><%= job.subject %></td>
         <td><%= job.person_type %></td>
         <td><%= job.research_use %></td>
-        <td><%= job.date_started.strftime('%m/%d/%Y') %></td>
+        <td><%= job.start_date %></td>
    		<% if job.complete? %>
    			<td>Completed</td>
    		<% else %>
