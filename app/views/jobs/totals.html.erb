@@ -46,13 +46,12 @@
 	</table>
 	
 	<h3>Total Jobs</h3>
-<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
-	.group(:au_chog).count,  donut: true %>
+		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
+			.group(:au_chog).count,  donut: true %>
 
-
-<h3>Total Hours</h3>
-<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
-	.group(:au_chog).sum(:time_spend), donut: true %>
+	<h3>Total Hours</h3>
+		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
+			.group(:au_chog).sum(:time_spend), donut: true %>
 
 <% else %>
 	<table>
