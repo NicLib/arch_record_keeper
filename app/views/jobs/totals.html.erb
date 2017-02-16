@@ -1,3 +1,4 @@
+<%= provide(:title, 'Job Totals') %>
 <% if params[:start_date] || params[:end_date] %>
 	<h1>Totals for <%= params[:start_date].to_time.strftime('%m/%d/%Y')%> - <%= params[:end_date].to_time.strftime('%m/%d/%Y')%></h1>
 <% else %>
@@ -44,7 +45,7 @@
 			<td><%= @total_chog.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></td>
 		</tr>
 	</table>
-	
+
 	<h3>Total Jobs</h3>
 		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
 			.group(:au_chog).count,  donut: true %>
@@ -83,7 +84,7 @@
 			<td><%= @total_chog.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></td>
 		</tr>
 	</table>
-	
+
 	<h3>Total Jobs</h3>
 		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).count,  donut: true %>
 
