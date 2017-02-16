@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
+  before_action :refuse_view
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  
+
   helper_method :sort_column, :sort_direction
 
   # GET /jobs
@@ -68,7 +69,7 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def totals
     @end_time = Time.now
     @begin_time = @end_time - 1.year
@@ -77,6 +78,14 @@ class JobsController < ApplicationController
     @chog_jobs = Job.where(au_chog: 'CHOG')
     @total_au = Job.where(au_chog: 'AU')
     @total_chog = Job.where(au_chog: 'CHOG')
+  end
+
+  #Refuses view if not logged in
+  def refuse_view
+      if !current_user
+          redirect_to(root_path)
+          flash.now[:danger] = 'Must be logged in'
+      end
   end
 
   private
@@ -89,11 +98,11 @@ class JobsController < ApplicationController
     def job_params
       params.require(:job).permit(:first_name, :last_name, :street_address, :city, :state, :zip, :country, :telephone, :email, :subject, :person_type, :research_use, :time_spend, :au_chog, :complete, :notes, :start_date, :end_date)
     end
-    
+
     def sort_column
       Job.column_names.include?(params[:sort]) ? params[:sort] : 'last_name'
     end
-    
+
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
     end

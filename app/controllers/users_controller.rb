@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :refuse_view
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -59,6 +60,14 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  #Refuses view if not logged in
+  def refuse_view
+      if !current_user
+          redirect_to(root_path)
+          flash.now[:danger] = 'Must be logged in'
+      end
   end
 
   private
