@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :jobs
 
   #Root path
-  root 'jobs#index'
+  root 'sessions#new'
 
   #For login/out functionality
   get '/login', to: 'sessions#new'
