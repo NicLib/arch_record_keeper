@@ -8,11 +8,10 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     #Code for sorting columns found: http://railscasts.com/episodes/228-sortable-table-columns
-    @jobs = Job.all.order(sort_column + ' ' + sort_direction)
     if params[:search]
        @jobs = Job.search(params[:search]).order(sort_column + ' ' + sort_direction)
      else
-       @jobs = Job.all.order(sort_column + ' ' + sort_direction)
+       @jobs = Job.paginate(page: params[:page]).order(sort_column + ' ' + sort_direction)
     end
   end
 

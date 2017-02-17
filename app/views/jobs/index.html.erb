@@ -14,6 +14,8 @@
 </button><br>
 &nbsp;
 
+<%= will_paginate %>
+
 <% if @jobs.blank? %>
 	<h4>There are no jobs containing <%= params[:search]%>.</h4>
 <% end %>
@@ -53,5 +55,7 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate %>
 
 <br>
