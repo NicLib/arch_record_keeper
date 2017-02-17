@@ -86,9 +86,9 @@
 	</table>
 
 	<h3>Total Jobs</h3>
-		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).count,  donut: true, colors: ['#F57920', '#000000'], download: true %>
+		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).count,  donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
 
 
 	<h3>Total Hours</h3>
-		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).sum(:time_spend), donut: true, colors: ['#F57920', '#000000'], download: true %>
+		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).sum(:time_spend), donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
 <% end %>
