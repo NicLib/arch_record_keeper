@@ -10,14 +10,14 @@
 	<%= submit_tag 'Search', :name => nil %>
 <% end %>
 
-<button><%= link_to 'New Job', new_job_path %>
+<button><%= link_to 'Add Job', new_job_path %>
 </button><br>
 &nbsp;
 
-<%= will_paginate %>
+<% will_paginate %>
 
 <% if @jobs.blank? %>
-	<h4>There are no jobs containing <%= params[:search]%>.</h4>
+	<h4>There are no jobs containing &quot;<%= params[:search]%>&quot;.</h4>
 <% end %>
 
 <table class="table table-striped">
@@ -56,6 +56,5 @@
   </tbody>
 </table>
 
-<%= will_paginate %>
 
 <br>
