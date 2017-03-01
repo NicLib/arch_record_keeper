@@ -19,76 +19,76 @@
 	<table>
 		<tr>
 			<td><strong>Total Jobs:</strong></td>
-			<td><strong><%= @jobs.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").count %></strong></td>
+			<td><strong><%= @jobs.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").count %></strong></td>
 		</tr>
 		<tr>
 			<td><strong>Total AU Jobs:</strong></td>
-			<td><%= @au_jobs.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").count %></td>
+			<td><%= @au_jobs.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").count %></td>
 		</tr>
 		<tr>
 			<td><strong>Total CHOG Jobs:</strong></td>
-			<td><%= @chog_jobs.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").count %></td>
+			<td><%= @chog_jobs.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").count %></td>
 		</tr>
 		<tr>
 			<td><hr /></td>
 		</tr>
 		<tr>
 			<td><strong>Total Hours:</strong></td>
-			<td><strong><%= @jobs.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></strong></td>
+			<td><strong><%= @jobs.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></strong></td>
 		</tr>
 		<tr>
 			<td><strong>Total AU Hours:</strong></td>
-			<td><%= @total_au.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></td>
+			<td><%= @total_au.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></td>
 		</tr>
 		<tr>
 			<td><strong>Total CHOG Hours:</strong></td>
-			<td><%= @total_chog.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></td>
+			<td><%= @total_chog.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}").sum(:time_spend) %></td>
 		</tr>
 	</table>
 
 	<h3>Total Jobs</h3>
-		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
+		<%= pie_chart Job.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
 			.group(:au_chog).count,  donut: true %>
 
 	<h3>Total Hours</h3>
-		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
+		<%= pie_chart Job.where("start_date >= ? or end_date <= ?", "#{params[:start_date]}", "#{params[:end_date]}")
 			.group(:au_chog).sum(:time_spend), donut: true %>
 
 <% else %>
 	<table>
 		<tr>
 			<td><strong>Total Jobs:</strong></td>
-			<td><strong><%= @jobs.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></strong></td>
+			<td><strong><%= @jobs.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></strong></td>
 		</tr>
 		<tr>
 			<td><strong>Total AU Jobs:</strong></td>
-			<td><%= @au_jobs.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></td>
+			<td><%= @au_jobs.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></td>
 		</tr>
 		<tr>
 			<td><strong>Total CHOG Jobs:</strong></td>
-			<td><%= @chog_jobs.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></td>
+			<td><%= @chog_jobs.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></td>
 		</tr>
 		<tr>
 			<td><hr /></td>
 		</tr>
 		<tr>
 			<td><strong>Total Hours:</strong></td>
-			<td><strong><%= @jobs.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></strong></td>
+			<td><strong><%= @jobs.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></strong></td>
 		</tr>
 		<tr>
 			<td><strong>Total AU Hours:</strong></td>
-			<td><%= @total_au.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></td>
+			<td><%= @total_au.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></td>
 		</tr>
 		<tr>
 			<td><strong>Total CHOG Hours:</strong></td>
-			<td><%= @total_chog.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></td>
+			<td><%= @total_chog.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").sum(:time_spend) %></td>
 		</tr>
 	</table>
 
 	<h3>Total Jobs</h3>
-		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).count,  donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
+		<%= pie_chart Job.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).count,  donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
 
 
 	<h3>Total Hours</h3>
-		<%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).sum(:time_spend), donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
+		<%= pie_chart Job.where("start_date >= ? or end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).sum(:time_spend), donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
 <% end %>
