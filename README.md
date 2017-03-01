@@ -13,3 +13,5 @@ then add your first user manually
 > user.save
 ```
 Password and password_confirmation must be the same. Once the user is created, you will be able to log in and create users through the interface.
+
+Built with Ruby 2.3.3 and Rails 5.0.1
