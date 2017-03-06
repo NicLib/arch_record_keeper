@@ -79,14 +79,6 @@ class JobsController < ApplicationController
     @total_chog = Job.where(au_chog: 'CHOG')
   end
 
-  #Refuses view if not logged in
-  def refuse_view
-      if !current_user
-          redirect_to(root_path)
-          flash.now[:danger] = 'Must be logged in'
-      end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
