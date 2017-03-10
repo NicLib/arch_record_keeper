@@ -1,6 +1,9 @@
+require File.expand_path(File.dirname(__FILE__) + '../../../../config/environments')
 require 'nokogiri'
 
-doc = File.open('/app/assets/data/old_data.xml') {|f| Nokogiri::XML(f)}
+OLD_DATA = 'data/old_data.xml'
+
+doc = File.open(OLD_DATA) {|f| Nokogiri::XML(f)}
 
 doc.css('request').each do |node|
     Job.create(
