@@ -14,8 +14,17 @@ namespace :db do
             end
 
             doc.css("request").each do |node|
+                name = node['name'].split(' ')
+
+                if name.length <= 2
+                    last_name = name[1]
+                    first_name = name[0]
+                else
+                    full_name = name.reverse.join(', ')
+                end
                 Job.create(
-                    :last_name => node['name'],
+                    :last_name => last_name || full_name,
+                    :first_name => first_name,
                     :telephone => node['phone'],
                     :street_address => node['address'],
                     :city => node['city'],
