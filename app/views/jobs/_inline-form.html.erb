@@ -1,0 +1,117 @@
+<form class="form-horizontal">
+    <%= form_for(job) do |f| %>
+        <div class="form-group">
+            <%= f.label :first_name, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :first_name, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :last_name, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :street_address, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :street_address, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :city, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :city, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :state, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :state, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :zip, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.number_field :zip, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :country, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :country, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :telephone, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.telephone_field :telephone, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :email, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.email_field :email, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :subject, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :subject, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :person_type, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.select :person_type, ['AU Faculty/Staff', 'Retired AU Fac/Staff', 'AU Student', 'AU Alumnus', 'Church Historian', 'Family Historian', 'CHOG MIN', 'CHOG Pastor', 'CHOG Member', 'Other'], class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :research_use, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.select :research_use, ['Research Paper', 'Personal', 'Thesis/Dissertation', 'Speech/Debate', 'Family History', 'Church History', 'Article', 'Book', 'University Business', 'CHOG Business', 'Other'], class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :start_date, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.date_field :start_date, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :end_date, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.date_field :end_date, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :time_spend, 'Time Spent', class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_field :time_spend, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :au_chog, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.select :au_chog, ['AU', 'CHOG'], class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :complete, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10 checkbox">
+                <%= f.check_box :complete, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :notes, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+                <%= f.text_area :notes, class: "form-control" %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-default"><%= f.submit %></button>
+            </div>
+        </div>
+    <% end %>
+</form>

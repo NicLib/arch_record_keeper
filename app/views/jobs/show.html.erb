@@ -1,72 +1,67 @@
 <%= provide(:title, "Job ##{@job.id}") %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @job.first_name %> <%= @job.last_name%>
-</p>
+<h1>Job #<%= @job.id %></h1>
 
-<p>
-	<strong>Street address:</strong><br/>
-	<%= @job.street_address %><br/>
-	<%= @job.city %>, <%= @job.state %><br />
-	<%= @job.country %> <%= @job.zip %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @job.telephone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @job.email %>
-</p>
-
-<p>
-  <strong>Subject:</strong>
-  <%= @job.subject %>
-</p>
-
-<p>
-  <strong>Person type:</strong>
-  <%= @job.person_type %>
-</p>
-
-<p>
-  <strong>Research use:</strong>
-  <%= @job.research_use %>
-</p>
-
-<p>
-	<strong>Date Started:</strong>
-	<%= @job.start_date %>
-</p>
-
-<p>
-	<strong>Date Last Worked On:</strong>
-	<%= @job.end_date %>
-</p>
-
-<p>
-  <strong>Time spent:</strong>
-  <%= @job.time_spend %>
-</p>
-
-<p>
-  <strong>AU or CHOG:</strong>
-  <%= @job.au_chog %>
-</p>
-
-<p>
-  <strong>Complete:</strong>
-  <%= @job.complete %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @job.notes %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <td><strong>Name:</strong></td>
+            <td><%= @job.first_name %> <%= @job.last_name %></td>
+        </tr>
+        <tr>
+            <td><strong>Street Address:</strong></td>
+            <td><%= @job.street_address %><br/>
+        	<%= @job.city %>, <%= @job.state %><br />
+        	<%= @job.country %> <%= @job.zip %></td>
+        </tr>
+        <tr>
+            <td><strong>Phone:</strong></td>
+            <td><%= @job.telephone %></td>
+        </tr>
+        <tr>
+            <td><strong>Email:</strong></td>
+            <td><%= @job.email %></td>
+        </tr>
+        <tr>
+            <td><strong>Subject:</strong></td>
+            <td><%= @job.subject %></td>
+        </tr>
+        <tr>
+            <td><strong>Person Type:</strong></td>
+            <td><%= @job.person_type %></td>
+        </tr>
+        <tr>
+            <td><strong>Research Use:</strong></td>
+            <td><%= @job.research_use %></td>
+        </tr>
+        <tr>
+            <td><strong>Date Started:</strong></td>
+            <td><%= @job.start_date %></td>
+        </tr>
+        <tr>
+            <td><strong>Date Last Worked On:</strong></td>
+            <td><%= @job.end_date %></td>
+        </tr>
+        <tr>
+            <td><strong>Time Spent:</strong></td>
+            <td><%= @job.time_spend %></td>
+        </tr>
+        <tr>
+            <td><strong>AU or Church of God:</strong></td>
+            <td><%= @job.au_chog %></td>
+        </tr>
+        <tr>
+            <td><strong>Complete?:</strong></td>
+            <td><%= @job.complete %></td>
+        </tr>
+        <tr>
+            <td><strong>Notes:</strong></td>
+            <td><%= @job.notes %></td>
+        </tr>
+        <tr>
+            <td style="text-align:left"><button class="btn btn-default"><%= link_to 'Back', jobs_path %></button></td>
+            <td style="text-align:right;"><button class="btn btn-default"><%= link_to 'Edit', edit_job_path(@job) %></button>    <button class="btn btn-danger"><%= link_to 'Destroy', @job, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        </tr>
+    </tbody>
+</table>

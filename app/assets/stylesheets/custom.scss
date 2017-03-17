@@ -218,3 +218,16 @@ input{
         border-bottom: 1px solid $gray-lighter;
     }
  }
+
+ /* Jobs index */
+ .completed-true{
+    background-color: #99FF99;
+ }
+
+ .completed-false{
+    background-color: #FF9999;
+ }
+
+ .linked-row{
+     cursor: pointer;
+ }
