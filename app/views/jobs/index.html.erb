@@ -5,7 +5,9 @@
 
 <%= render 'search_bar' %>
 
-<%= will_paginate %>
+<div class="col-sm-12 text-center">
+	<%= will_paginate %>
+</div>
 
 <div class="col-sm-12">
 	<%= link_to 'Add Job', new_job_path, class: 'btn btn-default' %>
