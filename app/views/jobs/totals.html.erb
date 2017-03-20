@@ -5,16 +5,18 @@
 	<h1>Totals for <%= @begin_time.strftime('%m/%d/%Y') %> - <%= @end_time.strftime('%m/%d/%Y') %></h1>
 <% end %>
 
-<%= link_to 'Back', root_path %>
+<div class="col-sm-12">
+	<%= render 'time-search' %>
+</div>
 
-<%= render 'time-search' %>
+<div class="col-sm-12">
+	<% if params[:start_date] || params[:end_date] %>
 
-<% if params[:start_date] || params[:end_date] %>
+		<%= render 'param_totals' %>
 
-	<%= render 'param_totals' %>
+	<% else %>
 
-<% else %>
+		<%= render 'base_totals' %>
 
-	<%= render 'base_totals' %>
-	
-<% end %>
+	<% end %>
+</div>

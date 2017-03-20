@@ -1,4 +1,7 @@
-<table>
+<table class="table table-striped">
+    <tr>
+        <td colspan="2" class="text-center"><strong><h3>Jobs</h3></strong></td>
+    </tr>
     <tr>
         <td><strong>Total Jobs:</strong></td>
         <td><strong><%= @jobs.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></strong></td>
@@ -12,7 +15,7 @@
         <td><%= @chog_jobs.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").count %></td>
     </tr>
     <tr>
-        <td><hr /></td>
+        <td colspan="2" class="text-center"><strong><h3>Hours</h3></strong></td>
     </tr>
     <tr>
         <td><strong>Total Hours:</strong></td>
@@ -28,9 +31,12 @@
     </tr>
 </table>
 
-<h3>Total Jobs</h3>
+<div class="col-sm-6 text-center">
+    <h3>Total Jobs</h3>
     <%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).count,  donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
+</div>
 
-
-<h3>Total Hours</h3>
+<div class="col-sm-6 text-center">
+    <h3>Total Hours</h3>
     <%= pie_chart Job.where("start_date >= ? and end_date <= ?", "#{@begin_time}", "#{@end_time}").group(:au_chog).sum(:time_spend), donut: true, colors: ['#F57920', '#A5ACAF'], download: true %>
+</div>

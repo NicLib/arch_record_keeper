@@ -1,7 +1,19 @@
-<%= form_tag(totals_path ,:method => 'get', id: 'date_range')  do  %>
-	<%= label :start_date, "Start: " %>
-	<%= date_field_tag :start_date, params[:start_date], value: params[:start_date] || @begin_time.strftime('%Y-%m-%d'), id: 'start_date' %>
-	<%= label :end_date, "End: "%>
-	<%= date_field_tag :end_date, params[:end_date], value: params[:end_date] || @end_time.strftime('%Y-%m-%d'), id: 'end_date'%>
-	<%= submit_tag 'Search', :name => nil %>
+<div class="text-center">
+<%= form_tag(totals_path, method: 'get', id: 'date_range') do %>
+	<div class="form-group">
+		<%= label :start_date, 'Start:', class: 'control-label col-sm-1' %>
+		<div class="col-sm-4">
+			<%= date_field_tag :start_date, params[:start_date], value: params[:start_date] || @begin_time.strftime('%Y-%m-%d'), id: 'start_date', class: 'form-control' %>
+		</div>
+	</div>
+	<div class="form-group">
+		<%=  label :end_date, 'End:', class: 'control-label col-sm-1' %>
+		<div class="col-sm-4">
+			<%= date_field_tag :end_date, params[:end_date], value: params[:end_date] || @end_time.strftime('%Y-%m-%d'), id: 'end_date', class: 'form-control' %>
+		</div>
+	</div>
+	<div class="col-sm-2">
+		<%= submit_tag 'Search', name: nil, class: 'btn btn-default' %>
+	</div>
 <% end %>
+</div>
