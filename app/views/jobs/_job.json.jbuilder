@@ -1,2 +1,0 @@
-json.extract! job, :id, :name, :street_address, :city, :state, :zip, :telephone, :email, :subject, :person_type, :research_use, :time_spend, :au_chog, :complete, :notes, :created_at, :updated_at
-json.url job_url(job, format: :json)

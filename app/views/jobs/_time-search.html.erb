@@ -1,0 +1,7 @@
+<%= form_tag(totals_path ,:method => 'get', id: 'date_range')  do  %>
+	<%= label :start_date, "Start: " %>
+	<%= date_field_tag :start_date, params[:start_date], value: params[:start_date] || @begin_time.strftime('%Y-%m-%d'), id: 'start_date' %>
+	<%= label :end_date, "End: "%>
+	<%= date_field_tag :end_date, params[:end_date], value: params[:end_date] || @end_time.strftime('%Y-%m-%d'), id: 'end_date'%>
+	<%= submit_tag 'Search', :name => nil %>
+<% end %>

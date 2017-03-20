@@ -1,7 +1,7 @@
 <%= provide(:title, "Edit Job ##{@job.id}") %>
 <h1>Editing Job</h1>
 
-<%= render 'form', job: @job %>
+<%= render 'inline-form', job: @job %>
 
 <%= link_to 'Show', @job %> |
 <%= link_to 'Back', jobs_path %>
