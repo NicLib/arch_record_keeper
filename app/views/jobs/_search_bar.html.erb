@@ -1,0 +1,8 @@
+<!-- Search bar courtesy of http://www.rymcmahon.com/articles/2 -->
+
+<%= form_tag(jobs_path, :method => 'get', id: 'search-form') do %>
+	<div class="col-sm-10">
+		<%= text_field_tag :search, params[:search], placeholder: 'Search Jobs List', class: 'form-control' %>
+	</div>
+	<%= submit_tag 'Search', :name => nil, class: 'btn btn-default col-sm-2' %>
+<% end %>
