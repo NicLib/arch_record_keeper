@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.first_name %> <%= @user.last_name %>
-</p>
+<div class="text-center">
+    <h2>User: <%= "#{@user.first_name} #{@user.last_name}" %></h2>
+</div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<table class="table table-striped">
+    <tr>
+        <td><strong>Username</strong></td>
+        <td><%= @user.username %></td>
+    </tr>
+    <tr>
+        <td style="text-align:left"><button class="btn btn-default"><%= link_to 'Back', users_path %></button></td>
+        <td style="text-align:right;"><button class="btn btn-default"><%= link_to 'Edit', edit_user_path(@user) %></button>    <button class="btn btn-danger"><%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+    </tr>
+</table>
