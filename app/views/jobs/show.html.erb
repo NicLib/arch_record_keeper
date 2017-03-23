@@ -52,8 +52,8 @@
             <td><%= @job.au_chog %></td>
         </tr>
         <tr>
-            <td><strong>Complete?:</strong></td>
-            <td><%= @job.complete %></td>
+            <td><strong>Complete:</strong></td>
+            <td><%= if @job.complete then 'Yes' else 'No' end %></td>
         </tr>
         <tr>
             <td><strong>Notes:</strong></td>
