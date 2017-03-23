@@ -75,13 +75,13 @@
         <div class="form-group">
             <%= f.label :person_type, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-                <%= f.select :person_type, ['AU Faculty/Staff', 'Retired AU Fac/Staff', 'AU Student', 'AU Alumnus', 'Church Historian', 'Family Historian', 'CHOG MIN', 'CHOG Pastor', 'CHOG Member', 'Other'], class: "form-control" %>
+                <%= f.select :person_type, ['AU Faculty/Staff', 'Retired AU Fac/Staff', 'AU Student', 'AU Alumnus', 'Church Historian', 'Family Historian', 'CHOG MIN', 'CHOG Pastor', 'CHOG Member', 'Other'], {}, class: "form-control" %>
             </div>
         </div>
         <div class="form-group">
             <%= f.label :research_use, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-                <%= f.select :research_use, ['Research Paper', 'Personal', 'Thesis/Dissertation', 'Speech/Debate', 'Family History', 'Church History', 'Article', 'Book', 'University Business', 'CHOG Business', 'Other'], class: "form-control" %>
+                <%= f.select :research_use, ['Research Paper', 'Personal', 'Thesis/Dissertation', 'Speech/Debate', 'Family History', 'Church History', 'Article', 'Book', 'University Business', 'CHOG Business', 'Other'], {}, class: "form-control" %>
             </div>
         </div>
         <div class="form-group">
@@ -105,19 +105,19 @@
         <div class="form-group">
             <%= f.label :au_chog, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-                <%= f.select :au_chog, ['AU', 'CHOG'], class: "form-control" %>
+                <%= f.select :au_chog, ['AU', 'CHOG'], {}, class: "form-control" %>
             </div>
         </div>
         <div class="form-group">
             <%= f.label :complete, class: "col-sm-2 control-label" %>
             <div class="col-sm-10 checkbox">
-                <%= f.check_box :complete, class: "form-control" %>
+                <%= f.check_box :complete, class: "form-control checkbox" %>
             </div>
         </div>
         <div class="form-group">
             <%= f.label :notes, class: "col-sm-2 control-label" %>
             <div class="col-sm-10">
-                <%= f.text_area :notes, class: "form-control" %>
+                <%= f.text_area :notes, class: "form-control", rows: 3 %>
             </div>
         </div>
         <div class="form-group">
