@@ -231,3 +231,18 @@ input{
  .linked-row{
      cursor: pointer;
  }
+
+ .mobile-nav{
+     display: none;
+ }
+
+ /* Media Queries */
+ @media screen and (max-width: 766px){
+     .main-nav{
+         display: none;
+     }
+     .mobile-nav{
+         display: initial;
+         float: right;
+     }
+ }

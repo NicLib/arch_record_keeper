@@ -17,38 +17,39 @@
 	<h4>There are no jobs containing &quot;<%= params[:search]%>&quot;.</h4>
 <% end %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th><%= sortable 'last_name', 'Last Name' %></th>
-      <th><%= sortable 'first_name', 'First Name' %></th>
-      <th><%= sortable 'subject' %></th>
-      <th><%= sortable 'person_type', 'Person Type' %></th>
-      <th><%= sortable 'research_use', 'Research Use' %></th>
-      <th><%= sortable 'start_date', 'Date Started' %></th>
-      <th><%= sortable 'complete' %></th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+<div class="table-responsive">
+	<table class="table">
+  		<thead>
+    		<tr>
+      			<th><%= sortable 'last_name', 'Last Name' %></th>
+      			<th><%= sortable 'first_name', 'First Name' %></th>
+      			<th><%= sortable 'subject' %></th>
+      			<th><%= sortable 'person_type', 'Person Type' %></th>
+      			<th><%= sortable 'research_use', 'Research Use' %></th>
+      			<th><%= sortable 'start_date', 'Date Started' %></th>
+      			<th><%= sortable 'complete' %></th>
+      			<th colspan="2"></th>
+    		</tr>
+  		</thead>
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr class="completed-<%= job.complete %> linked-row" data-link="<%= job_path(job) %>">
-        <td><%= job.last_name %></td>
-        <td><%= job.first_name %></td>
-        <td><%= job.subject %></td>
-        <td><%= job.person_type %></td>
-        <td><%= job.research_use %></td>
-        <td><%= job.start_date %></td>
-   		<% if job.complete? %>
-   			<td>Completed</td>
-   		<% else %>
-   			<td>Incomplete</td>
-   		<% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  		<tbody>
+    		<% @jobs.each do |job| %>
+      			<tr class="completed-<%= job.complete %> linked-row" data-link="<%= job_path(job) %>">
+        			<td><%= job.last_name %></td>
+        			<td><%= job.first_name %></td>
+        			<td><%= job.subject %></td>
+        			<td><%= job.person_type %></td>
+        			<td><%= job.research_use %></td>
+        			<td><%= job.start_date %></td>
+   					<% if job.complete? %>
+   						<td>Completed</td>
+   					<% else %>
+   						<td>Incomplete</td>
+   					<% end %>
+      			</tr>
+    		<% end %>
+  		</tbody>
+	</table>
+</div>
 
 <br>
