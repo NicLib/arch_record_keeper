@@ -27,7 +27,6 @@ class JobsController < ApplicationController
 
   # GET /jobs/1/edit
   def edit
-      @job = Job.find_by(params[:id])
   end
 
   # POST /jobs
