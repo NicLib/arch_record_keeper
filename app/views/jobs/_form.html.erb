@@ -81,7 +81,7 @@
         <div class="form-group">
             <%= f.label :start_date, class: "col-sm-2 control-label" %>
             <div class="col-sm-4">
-                <%= f.date_field :start_date, class: "form-control" %>
+                <%= f.date_field :start_date, class: "form-control", value: @job.start_date || Time.now.strftime('%Y-%m-%d') %>
             </div>
             <%= f.label :end_date, class: "col-sm-2 control-label" %>
             <div class="col-sm-4">
