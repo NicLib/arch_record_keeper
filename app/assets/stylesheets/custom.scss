@@ -2,6 +2,7 @@
 @import 'bootstrap';
 
 $gray-medium-light: #EAEAEA;
+$au_readable_orange: #B44723;
 
 @mixin box_sizing{
   -moz-box-sizing: border-box;
@@ -95,8 +96,9 @@ footer{
 	color: $gray-light;
 	a{
 		color: $gray;
+        transition: all .5s;
 		&:hover{
-			color: $gray-darker;
+			color: $au_readable_orange;
 		}
 	}
 	small{
@@ -222,10 +224,18 @@ input{
  /* Jobs index */
  .completed-true{
     background-color: #99FF99;
+    &:hover{
+        background-color: darken(#99FF99, 15%);
+        font-weight: bold;
+    }
  }
 
  .completed-false{
     background-color: #FF9999;
+    &:hover{
+        background-color: darken(#FF9999, 15%);
+        font-weight: bold;
+    }
  }
 
  .linked-row{
