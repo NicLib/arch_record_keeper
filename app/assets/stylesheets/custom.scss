@@ -255,12 +255,19 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
     li{
         a{
             color: $au_readable_orange;
+            &:hover{
+                color: darken($au_readable_orange, 10%);
+            }
         }
     }
     .active{
         a{
             background-color: $au_readable_orange;
             border-color: $au_readable_orange;
+            &:hover{
+                background-color: darken($au_readable_orange, 10%);
+                border-color: darken($au_readable_orange, 10%);
+            }
         }
     }
 }
