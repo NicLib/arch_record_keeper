@@ -97,9 +97,11 @@ footer{
 	color: $gray-light;
 	a{
 		color: $black;
+        text-decoration: none;
         transition: all .5s;
 		&:hover{
 			color: $au_readable_orange;
+            text-decoration: none;
 		}
 	}
 	small{
